@@ -116,11 +116,12 @@ footer {
 header {
     margin: 0;
     padding: 20px;
-    background: rgba(15, 25, 55, 0.95);
-    color: #05080b;
+    background: rgba(255, 255, 255, 0.95); /* blanco suave */
+    color: #05080b; /* texto oscuro */
     font-size: 16px;
-    border-bottom: 1px solid rgba(100, 150, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3); /* línea azul KH */
 }
+
 
 nav {
     border: none;
@@ -145,14 +146,15 @@ nav {
 
 /* Enlaces estilo PS1 mejorados para fondo azul */
 .navbar a {
-    color: #c0d8ff;
+    color: #ffffff;
     text-decoration: none;
     font-family: 'Press Start 2P', monospace;
     font-size: 18px;
-    text-shadow: 2px 2px #1a2a5a, -2px -2px #0a1535;
+    text-shadow: 2px 2px #ffffff, -2px -2px #0a1535;
     transition: all 0.3s ease;
     position: relative;
 }
+
 
 .navbar a:hover {
     color: #ffffff;
@@ -178,13 +180,13 @@ nav {
 .fogcore {
     text-align: center;
     position: relative;
-    color: #a0c8ff;
+    color: #ffffff;
     font-size: 22px;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: bold;
     animation: fogglitch 1.5s infinite;
-    text-shadow: 1px 1px #0a1535, -1px -1px #1a2a5a;
+    text-shadow: 1px 1px #ffffff, -1px -1px #1a2a5a;
     margin: 20px 0;
 }
 
