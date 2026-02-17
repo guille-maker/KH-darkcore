@@ -1,0 +1,265 @@
+   .manga-section {
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            min-height: 100vh;
+        }
+
+        .manga-title {
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .search-input {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid #666;
+            color: white;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+        }
+
+        .search-input::placeholder {
+            color: #999;
+        }
+
+        .manga-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .manga-card {
+            background: rgba(34, 34, 34, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 2px solid #444;
+            cursor: pointer;
+        }
+
+        .manga-card:hover {
+            transform: translateY(-5px);
+            border-color: #fff;
+            box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+        }
+
+        .manga-cover {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .manga-info {
+            padding: 15px;
+        }
+
+        .manga-name {
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .manga-status {
+            font-size: 10px;
+            color: #ccc;
+            text-transform: uppercase;
+        }
+
+        .loading {
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            padding: 40px;
+        }
+
+        .manga-modal .modal-content {
+            background: #222;
+            color: white;
+            border: 2px solid #666;
+        }
+
+        .manga-modal .modal-header {
+            border-bottom: 1px solid #444;
+        }
+
+        .manga-modal .btn-close {
+            filter: invert(1);
+        }
+
+        .chapter-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .chapter-item {
+            padding: 10px;
+            border-bottom: 1px solid #444;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .chapter-item:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        .navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* más separación */
+}
+
+.navbar li {
+    display: flex;
+    align-items: center; /* centra verticalmente todo el contenido del li */
+    gap: 10px;           /* separación entre imagen y texto */
+}
+
+/* Enlaces estilo PS1 */
+.navbar a {
+    color: #eee; /* blanco-gris para contraste oscuro */
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 18px; /* grande tipo título */
+    text-shadow:
+        2px 2px #555,    /* sombra gris oscura */
+        -2px -2px #333;  /* sombra negra tenue */
+    transition: all 0.3s ease;
+}
+
+/* Hover: agrandado + ligero glow */
+.navbar a:hover {
+    color: #fff; /* blanco puro al pasar el ratón */
+    transform: scale(1.2); /* agrandado tipo PS1 */
+    text-shadow:
+        3px 3px #999,   /* sombra gris clara */
+        -3px -3px #666;
+}
+
+footer {
+  background: #222;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  /* espacio entre main y footer */
+}
+
+/* Añade estos estilos a tu CSS existente */
+
+/* LECTOR DE CAPÍTULOS */
+.reader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.reader-container.active {
+    display: flex;
+}
+
+.reader-header {
+    background: #222;
+    padding: 15px;
+    border-bottom: 2px solid #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reader-title {
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    margin: 0;
+}
+
+.reader-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.reader-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.chapter-page {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.reader-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: #222;
+}
+
+/* MEJORAR LISTA DE CAPÍTULOS */
+.chapter-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.chapter-item:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.chapter-info {
+    flex: 1;
+}
+
+.chapter-number {
+    font-weight: bold;
+    color: #fff;
+}
+
+.chapter-title {
+    color: #ccc;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.read-chapter-btn {
+    font-size: 11px;
+    padding: 4px 8px;
+}
+.chapter-page {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+.chapter-page.zoomed {
+    cursor: zoom-out;
+    transform: scale(1.5);
+}

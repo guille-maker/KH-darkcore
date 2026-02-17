@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Hornet Mini Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game" width="800" height="400"></canvas>
+  <script>
+    const canvas = document.getElementById("game");
+    const ctx = canvas.getContext("2d");
+
+    // Jugador
+    const player = {
+      x: 100,
+      y: 300,
+      width: 50,
+      height: 70,
+      color: "crimson",
+      velX: 0,
+      velY: 0,
+      onGround: false,
+      state: "idle" // idle, run, jump, attack
+    };
+
+    const gravity = 0.8;
+    const keys = {};
+
+    // Input
+    window.addEventListener("keydown", e => keys[e.code] = true);
+    window.addEventListener("keyup", e => keys[e.code] = false);
+
+    function update() {
+      // Movimiento lateral
+      if (keys["ArrowRight"]) {
+        player.velX = 5;
+        player.state = "run";
+      } else if (keys["ArrowLeft"]) {
+        player.velX = -5;
+        player.state = "run";
+      } else {
+        player.velX = 0;
+        if (player.onGround) player.state = "idle";
+      }
+
+      // Salto
+      if (keys["Space"] && player.onGround) {
+        player.velY = -15;
+        player.onGround = false;
+        player.state = "jump";
+      }
+
+      // Ataque
+      if (keys["KeyZ"]) {
+        player.state = "attack";
+      }
+
+      // Aplicar físicas
+      player.x += player.velX;
+      player.y += player.velY;
+      player.velY += gravity;
+
+      // Suelo
+      if (player.y + player.height >= canvas.height) {
+        player.y = canvas.height - player.height;
+        player.velY = 0;
+        player.onGround = true;
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Dibujar jugador (por ahora un rectángulo)
+      ctx.fillStyle = player.color;
+      ctx.fillRect(player.x, player.y, player.width, player.height);
+
+      // Mostrar estado arriba
+      ctx.fillStyle = "white";
+      ctx.font = "20px Arial";
+      ctx.fillText("Estado: " + player.state, 10, 20);
+    }
+
+    function gameLoop() {
+      update();
+      draw();
+      requestAnimationFrame(gameLoop);
+    }
+
+    gameLoop();
+  </script>
+</body>
+</html>

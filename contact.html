@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/about.css">
+    <title>KH Darkcore</title>
+
+    <style>
+        /* FORMULARIO CONTACTO */
+        .contact-box {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 30px;
+            background: rgba(20, 20, 40, 0.7);
+            border: 1px solid rgba(180, 180, 255, 0.4);
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(150, 200, 255, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .contact-box h2 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.6rem;
+            text-align: center;
+            background: linear-gradient(90deg, #fff6ff, #c1c1ff, #9ee9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 25px;
+        }
+
+        .contact-box p {
+            text-align: center;
+            font-family: 'Merriweather', serif;
+            color: #eaeaff;
+            margin-bottom: 30px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-form label {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+            color: #c0d8ff;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(120, 170, 255, 0.5);
+            background: rgba(10, 20, 40, 0.9);
+            color: #e0f0ff;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+            box-shadow: 0 0 12px rgba(100, 150, 255, 0.3);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #88aaff;
+            box-shadow: 0 0 20px rgba(150, 200, 255, 0.7);
+        }
+
+        .send-btn {
+            padding: 15px;
+            background: linear-gradient(90deg, #4a7fff, #88aaff);
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Press Start 2P', cursive;
+            transition: 0.3s ease;
+        }
+
+        .send-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(150, 200, 255, 1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TU HEADER ORIGINAL, SIN TOCAR -->
+    <header style="background: #222; color: #fff; padding: 10px;">
+        <nav style="border: none; box-shadow: none; text-align: center;">
+            <ul class="navbar">
+                <li><img src="css/sora1.png" alt="Sora" style="width: 80px;"></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="noticias.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- FORMULARIO DE CONTACTO -->
+        <section class="contact-box">
+            <h2>Contacto</h2>
+            <p>Si quieres escribirme, colaborar o simplemente saludar, puedes hacerlo aquí.</p>
+
+            <form class="contact-form" action="#" method="POST">
+                <label for="nombre">NOMBRE</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">CORREO</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">MENSAJE</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+                <button type="submit" class="send-btn">ENVIAR</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 KH Darkcore. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

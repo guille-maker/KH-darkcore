@@ -1,0 +1,581 @@
+/* HEADER & NAVBAR */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .navbar {
+        gap: 30px; /* menos separación entre enlaces */
+        flex-wrap: wrap; /* se ajusta en varias filas si es necesario */
+    }
+
+    .navbar a {
+        font-size: 16px;
+    }
+}
+
+/* TEXTO FOGCORE */
+@media screen and (max-width: 768px) {
+    .fogcore {
+        font-size: 18px;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* CÍRCULO DE LOGOS */
+@media screen and (max-width: 768px) {
+    .circle-logos {
+        width: 250px;
+        height: 250px;
+    }
+
+    .orbit img {
+        top: -100px;  /* ajustar radio proporcional al contenedor */
+        width: 60px;
+    }
+}
+
+/* Para móviles muy pequeños */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .navbar {
+        gap: 15px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .fogcore {
+        font-size: 16px;
+    }
+
+    .circle-logos {
+        width: 180px;
+        height: 180px;
+    }
+
+    .orbit img {
+        top: -70px;
+        width: 45px;
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  flex-direction: column
+}
+body {
+    background-image: url("fondo.webp");
+    background-repeat: no-repeat;
+    color: white;
+    background-size: cover;
+    background-position: center 20%;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.card.bg-dark {
+    background-color: rgba(34, 34, 34, 0.85); /* semi-transparente para ver el fondo */
+    border: none; /* quita borde blanco */
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  margin-top: 400px; /* espacio entre main y footer */
+}
+
+
+header {
+    margin: 0;
+    padding: 20px; background: #222; color: #fff;
+    font-size: 16px;
+}
+nav {
+    border: none;
+    box-shadow: none;
+    text-align: center;
+}
+.navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* más separación */
+}
+
+.navbar li {
+    display: flex;
+    align-items: center; /* centra verticalmente todo el contenido del li */
+    gap: 10px;           /* separación entre imagen y texto */
+}
+
+/* Enlaces estilo PS1 */
+.navbar a {
+    color: #eee; /* blanco-gris para contraste oscuro */
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 18px; /* grande tipo título */
+    text-shadow:
+        2px 2px #555,    /* sombra gris oscura */
+        -2px -2px #333;  /* sombra negra tenue */
+    transition: all 0.3s ease;
+}
+
+/* Hover: agrandado + ligero glow */
+.navbar a:hover {
+    color: #fff; /* blanco puro al pasar el ratón */
+    transform: scale(1.2); /* agrandado tipo PS1 */
+    text-shadow:
+        3px 3px #999,   /* sombra gris clara */
+        -3px -3px #666;
+}
+
+.fogcore {
+    text-align: center;
+    position: relative;
+    color: #ccc;
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font: bold;
+  
+    text-shadow:
+        1px 1px #000,
+        -1px -1px #111;
+}
+
+/* pseudo-elementos para glitch sutil */
+.fogcore::before,
+.fogcore::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+}
+
+.fogcore::before {
+    animation: fogglitchTop 1.5s infinite;
+    clip: rect(0, 9999px, 0, 0);
+    color: #999;
+}
+
+.fogcore::after {
+    animation: fogglitchBottom 1.5s infinite;
+    clip: rect(0, 9999px, 0, 0);
+    color: #666;
+}
+
+/* Animaciones glitch sutil */
+@keyframes fogglitch {
+    0%, 100% { transform: translate(0);}
+    25% { transform: translate(-1px, 1px);}
+    50% { transform: translate(1px, -1px);}
+    75% { transform: translate(-1px, 1px);}
+}
+
+@keyframes fogglitchTop {
+    0% { clip: rect(0, 9999px, 0, 0); transform: translate(-1px,-1px);}
+    50% { clip: rect(0, 9999px, 8px, 0); transform: translate(1px,1px);}
+    100% { clip: rect(0, 9999px, 0, 0); transform: translate(-1px,-1px);}
+}
+
+@keyframes fogglitchBottom {
+    0% { clip: rect(0, 9999px, 0, 0); transform: translate(1px,1px);}
+    50% { clip: rect(5px, 9999px, 12px, 0); transform: translate(-1px,-1px);}
+    100% { clip: rect(0, 9999px, 0, 0); transform: translate(1px,1px);}
+}
+.circle-logos {
+  position: relative;
+  width: 350px;   /* diámetro del círculo */
+  height: 350px;
+  margin: 30px auto;
+  margin-top: 10px;
+  border-radius: 50%;
+  animation: spin 40s linear infinite; /* rotación lenta */
+  
+}
+
+.circle-logos img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90px;    /* tamaño de cada símbolo */
+  width: auto;
+  filter: drop-shadow(0 0 10px #bbb);
+}
+
+
+/* Hover glitch y efecto scaling (como ya tenías) */
+
+/* Distribución perfecta de 6 logos en círculo */
+.circle-logos img:nth-child(1) { transform: rotate(0deg)   translateX(150px) rotate(0deg); }
+.circle-logos img:nth-child(2) { transform: rotate(60deg)  translateX(150px) rotate(-60deg); }
+.circle-logos img:nth-child(3) { transform: rotate(120deg) translateX(150px) rotate(-120deg); }
+.circle-logos img:nth-child(4) { transform: rotate(180deg) translateX(150px) rotate(-180deg); }
+.circle-logos img:nth-child(5) { transform: rotate(240deg) translateX(150px) rotate(-240deg); }
+.circle-logos img:nth-child(6) { transform: rotate(300deg) translateX(150px) rotate(-300deg); }
+/* Animación */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.circle-logos img:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+    filter: drop-shadow(0 0 15px rgb(1, 1, 1));
+    animation: imgGlitch 1.5s infinite;
+}
+
+@keyframes imgGlitch {
+    0%,100% { transform: translate(-50%, -50%) rotate(0deg); }
+    25% { transform: translate(-48%, -52%) rotate(-2deg); }
+    50% { transform: translate(-52%, -48%) rotate(2deg); }
+    75% { transform: translate(-50%, -50%) rotate(-1deg); }
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    padding: 40px;
+}
+
+.card {
+    background: rgba(34, 34, 34, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Press Start 2P', monospace;
+    text-shadow: 2px 2px #000;
+}
+.card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px #fff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0px;
+  margin: 50px;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.menu-item {
+  position: relative;
+  background: #222;
+  color: #eee;
+  padding: 15px 30px;
+  border: 2px solid #666;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu-item:hover {
+  background: #333;
+}
+
+/* Ajuste del contenido: aparecer debajo sin solaparse */
+.menu-content {
+  position: absolute;
+  top: 110%; /* ligeramente debajo del item */
+  left: 50%; /* centrado horizontal respecto al item */
+  transform: translateX(-50%); /* centrado perfecto */
+  width: 500px;
+  max-width: 90vw; /* responsive, no se salga en móviles */
+  background: rgba(20, 20, 20, 0.95);
+  border: 2px solid #444;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 10;
+  
+}
+
+.menu-item:hover .menu-content {
+  opacity: 1;
+  visibility: visible;
+  
+}
+.menu-left {
+  position: relative;
+  width: 100px;   /* igual que el disco */
+  height: 100px;  /* igual que el disco */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor del disco */
+.disc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+}
+
+/* Imagen del disco girando */
+.disc img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: girar 4s linear infinite;
+    object-fit: cover;
+}
+
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Efecto al pasar el mouse */
+.disc img:hover {
+    animation-duration: 2s;
+}
+
+
+.menu-right h3 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.menu-right p {
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.menu-right img {
+  width: 120px;
+  border: 2px solid #666;
+  border-radius: 5px;
+}
+
+.menu-right img:hover {
+  box-shadow: 0 0 15px #fff;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+
+
+
+.about {
+    background-color: rgba(255, 255, 255, 0.1); /* blanco transparente suave */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    backdrop-filter: blur(5px); /* difumina el fondo detrás de la sección */
+    color: #fff; /* texto blanco para que contraste con azul */
+}
+
+.about h2 {
+    font-family: 'Creepster', cursive; /* estilo más “celestial” */
+    font-size: 2rem;
+    color: #ffccff; /* lila suave, destaca sobre el azul */
+    text-shadow: 1px 1px 2px #000; /* para mejor legibilidad */
+}
+
+.about p {
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.about:nth-of-type(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+  gap: 30px;
+  padding: 20px;
+}
+
+.info-container img {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(180, 180, 255, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.info-container img:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.info-text {
+  flex: 1;
+  color: #ddd;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+/* Alternar posición */
+.info-container.left {
+  flex-direction: row;
+}
+
+.info-container.right {
+  flex-direction: row-reverse;
+}
+
+/* Estilo de títulos celestial-weirdcore */
+.celestial-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, #fff6ff, #c1c1ff, #9ee9ff);
+  -webkit-background-clip: text;
+    background-clip: text;
+  -webkit-text-fill-color: transparent;
+ 
+  margin-bottom: 15px;
+}
+
+/* Fondo detrás del texto */
+.text-box {
+  background: rgba(20, 20, 40, 0.7); /* oscuro semitransparente */
+  border: 1px solid rgba(180, 180, 255, 0.4);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 25px rgba(150, 200, 255, 0.3);
+  margin-top: 10px;
+}
+
+/* Tipografía más legible y con aire místico */
+.text-box p {
+  font-family: 'Merriweather', serif; /* puedes probar Playfair Display también */
+  font-size: 1.1rem;
+  color: #eaeaff;
+  line-height: 1.8;
+}
+
+/* Mantener los strong destacados */
+.text-box strong {
+  color: #b6f0ff;
+  text-shadow: 0 0 8px rgba(150, 220, 255, 0.7);
+}
+
+/* Cuando se activa la clase "light" → modo claro */
+body.light {
+ background-image: url("KH.jpg");
+    background-size: cover;
+    background-position: center 20%; /* ✅ Misma posición */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  color: #222;
+  
+}
+
+body.light footer {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+/* Cards */
+body.light .card {
+  background: rgba(240, 240, 240, 0.85);
+  color: #111;
+}
+
+/* Menús */
+body.light .menu-item {
+  background: #f0f0f0;
+  color: #111;
+  border-color: #ccc;
+}
+
+body.light .menu-item:hover {
+  background: #e0e0e0;
+}
+
+/* About sections */
+body.light .about {
+  background-color: rgba(255,255,255,0.6);
+  color: #111;
+}
+
+/* Text boxes */
+body.light .text-box {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(100,100,100,0.4);
+}
+
+body.light .text-box p,
+body.light .text-box strong {
+  color: #111;
+}
+
+/* Info text */
+body.light .info-text {
+  color: #222;
+}
+
+/* Fogcore */
+body.light .fogcore {
+  color: #222;
+  text-shadow: 1px 1px #ccc, -1px -1px #aaa;
+}
+
+.card, .menu-item, .about, .text-box, .info-text, .fogcore {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+/* Header y nav en modo claro */
+body.light header {
+  background-color: #f0f0f0;
+  color: #111;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.light nav {
+  background-color: #f0f0f0; /* si nav tiene fondo separado */
+}
+
+body.light .navbar a {
+  color: #111; /* enlaces negros en claro */
+}
+
+.animacion {
+  padding-top: 20px;
+  width: 30%;
+  height: auto;
+  border-radius: 15px;
+ 
+}
+
+

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    </noscript>
+
+    <!-- Fuente no crítica - carga diferida -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet" media="print"
+        onload="this.media='all'">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet" media="print"
+        onload="this.media='all'">
+
+    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
+
+    <link rel="manifest" href="manifest.json">
+    <title>KH Darkcore - Sitio Principal de Videojuegos</title>
+</head>
+
+<body>
+    <header role="banner">
+        <nav aria-label="Navegación principal">
+            <ul class="navbar">
+                <li>
+                    <img src="css/sora1.png" alt="Sora - Personaje principal de Kingdom Hearts" width="80" height="80"
+                        loading="eager" onmouseover="cambiarImagen()" onmouseout="restaurarImagen()">
+                </li>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="noticias.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li style="margin-left:10%;"><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        <h1 class="fogcore">Welcome to my special site</h1>
+        <h2 class="fogcore">This is a place where I share my projects and ideas.</h2>
+
+        <!-- Circle logos con lazy loading -->
+        <div class="circle-logos" aria-label="Colección de símbolos de videojuegos">
+            <img src="css/incorporeos.png" alt="Incorpóreos - enemigos de Kingdom Hearts" width="60" height="60"
+                loading="lazy">
+            <img src="css/heart.png" alt="Corazón - símbolo de Kingdom Hearts" width="60" height="60" loading="lazy">
+            <img src="css/unversed.png" alt="Unversed - criaturas de Kingdom Hearts Birth by Sleep" width="60"
+                height="60" loading="lazy">
+            <img src="css/unverc.png" alt="Unversed variante - criatura oscura" width="60" height="60" loading="lazy">
+            <img src="css/crown.png" alt="Corona - símbolo de la realeza en Kingdom Hearts" width="60" height="60"
+                loading="lazy">
+            <img src="css/ventus.png" alt="Ventus - personaje de Kingdom Hearts" width="60" height="60" loading="lazy">
+        </div>
+
+        <section class="menu-container" aria-label="Juegos destacados">
+
+            <!-- KH1 -->
+            <div class="menu-item" role="article" aria-labelledby="kh1-title">
+                <div class="menu-header" id="kh1-title">Kingdom Hearts 1</div>
+                <div class="menu-content">
+                    <div class="menu-left">
+                        <div class="disc">
+                            <img src="css/kh1discs.png" alt="Disco de Kingdom Hearts 1" width="100" height="100"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="menu-right">
+                        <h3>Kingdom Hearts 1</h3>
+                        <p>Aventura de acción y rol mezclando Disney y Final Fantasy. Sora, Donald y Goofy luchan contra
+                            la oscuridad.</p>
+                        <img src="css/kh1.5.webp" alt="Captura de gameplay de Kingdom Hearts 1" width="300" height="169"
+                            loading="lazy" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- KH2 -->
+            <div class="menu-item" role="article" aria-labelledby="kh2-title">
+                <div class="menu-header" id="kh2-title">Kingdom Hearts 2</div>
+                <div class="menu-content">
+                    <div class="menu-left">
+                        <div class="disc">
+                            <img src="css/240.png" alt="Disco de Kingdom Hearts 2" width="100" height="100"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="menu-right">
+                        <h3>Kingdom Hearts 2</h3>
+                        <p>La continuación de Sora y sus amigos. Explora nuevos mundos, mejora habilidades y enfréntate
+                            a la Organización XIII.</p>
+                        <img src="css/kh2.webp" alt="Captura de gameplay de Kingdom Hearts 2" width="300" height="169"
+                            loading="lazy" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drakengard -->
+            <div class="menu-item" role="article" aria-labelledby="drakengard-title">
+                <div class="menu-header" id="drakengard-title">Drakengard</div>
+                <div class="menu-content">
+                    <div class="menu-left">
+                        <div class="disc">
+                            <img src="css/d2.png" alt="Disco de Drakengard" width="100" height="100" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="menu-right">
+                        <h3>Drakengard</h3>
+                        <p>Un oscuro viaje a través de un mundo devastado por la guerra, donde la música y la locura se
+                            entrelazan.</p>
+                        <img src="css/drakengard.png" alt="Captura de gameplay de Drakengard" width="300" height="169"
+                            loading="lazy" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Silent Hill 2 -->
+            <div class="menu-item" role="article" aria-labelledby="sh2-title">
+                <div class="menu-header" id="sh2-title">Silent Hill 2</div>
+                <div class="menu-content">
+                    <div class="menu-left">
+                        <div class="disc">
+                            <img src="css/sh2d.png" alt="Disco de Silent Hill 2" width="100" height="100"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="menu-right">
+                        <h3>Silent Hill 2</h3>
+                        <p>Un viaje aterrador a través de la mente de un hombre en busca de su esposa en un pueblo
+                            envuelto en niebla.</p>
+                        <img src="css/sh2.jpg" alt="Captura de gameplay de Silent Hill 2" width="300" height="169"
+                            loading="lazy" />
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+        <div class="imagenes">
+        <img src="css/animacion.gif" alt="Animación decorativa" width="300" height="150" loading="lazy"
+            style="aspect-ratio: 200/150;">
+
+        <img src="css/corazon.gif" alt="Animación decorativa" width="300" height="150" loading="lazy"
+            style="aspect-ratio: 200/150;">
+
+        <img src="css/riku.gif" alt="Animación decorativa" width="300" height="150" loading="lazy"
+            style="aspect-ratio: 200/150;">
+            <img src="css/sora.gif" alt="Animación decorativa" width="300" height="150" loading="lazy"
+            style="aspect-ratio: 200/150;">
+            <img src="css/sora2.gif" alt="Animación decorativa" width="300" height="150" loading="lazy"
+            style="aspect-ratio: 200/150;">
+
+            </div>
+        <footer role="contentinfo">
+            <button id="modo" aria-label="Cambiar entre modo claro y modo oscuro">☀️ Modo claro</button><br>
+            <p>&copy; 2024 KH Darkcore. All rights reserved.</p>
+            
+        </footer>
+    </main>
+
+    <!-- Scripts al final del body -->
+    <!-- Scripts al final del body -->
+    <script>
+        // Optimización de imágenes - lazy loading mejorado
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.classList.add('img-loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+
+            // ✅ AÑADIR AQUÍ EL MODO CLARO/OSCURO
+            const modoBoton = document.getElementById('modo');
+
+            // Verificar preferencia guardada
+            const modoGuardado = localStorage.getItem('modo');
+            if (modoGuardado === 'light') {
+                document.body.classList.add('light');
+                modoBoton.textContent = '🌙 Modo oscuro';
+            }
+
+            // Event listener para el botón
+            modoBoton.addEventListener('click', function () {
+                document.body.classList.toggle('light');
+
+                if (document.body.classList.contains('light')) {
+                    this.textContent = '🌙 Modo oscuro';
+                    localStorage.setItem('modo', 'light');
+                } else {
+                    this.textContent = '☀️ Modo claro';
+                    localStorage.setItem('modo', 'dark');
+                }
+            });
+        });
+
+        // Service Worker (no crítico)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('Service Worker registrado'))
+                    .catch(err => console.error('Error registrando Service Worker', err));
+            });
+        }
+
+        // ✅ Funciones para cambiar imagen
+        function cambiarImagen() {
+            const img = document.querySelector('.navbar img');
+            img.src = 'css/sora2.png';
+        }
+
+        function restaurarImagen() {
+            const img = document.querySelector('.navbar img');
+            img.src = 'css/sora1.png';
+        }
+    </script>
+
+    <script src="javascript.js" defer></script>
+</body>
+
+</html>

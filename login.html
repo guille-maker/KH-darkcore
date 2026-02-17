@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+  <title>KH Darkcore</title>
+  <style></style>
+</head>
+
+<body>
+
+  <header style="background: #222; color: #fff; padding: 10px;">
+    <nav style="border: none; box-shadow: none; text-align: center;">
+      <ul class="navbar">
+        <li><img src="css/sora1.png" alt="Sora" style="width: 80px;" onmouseover="cambiarImagen()"
+            onmouseout="restaurarImagen()"></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="noticias.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li style="margin-left:10%;"><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <form class="formulario" id="form1">
+    <h3>Registro de Usuario</h3>
+    <label>Nombre:
+      <input type="text" name="nombre" required>
+    </label>
+    <label>Email:
+      <input type="email" name="email" required>
+    </label>
+    <label>Teléfono:
+      <input type="tel" name="telefono" pattern="[0-9]{9}" title="9 dígitos" required>
+    </label>
+    <label>Contraseña:
+      <input type="password" id="password" name="password" pattern=".{8,}" title="Mínimo 8 caracteres" required>
+    </label>
+
+
+    <label>Confirmar Contraseña:
+      <input type="password" name="confirm" id="confirm" pattern=".{8,}" title="Mínimo 8 caracteres" required>
+    </label>
+    <!-- Barra de fuerza -->
+    <div id="password-strength">
+      <div class="bar" id="bar1"></div>
+      <div class="bar" id="bar2"></div>
+      <div class="bar" id="bar3"></div>
+      <div class="bar" id="bar4"></div>
+    </div>
+    <button type="submit">Enviar</button>
+    <p style="text-align: center;">¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
+  </form>
+
+  <footer><button id="modo">☀️ Modo claro</button><br>
+
+    <p>&copy; 2024 KH Darkcore. All rights reserved.</p>
+  </footer>
+  <script src="javascript.js" defer></script>
+
+</body>
+
+</html>

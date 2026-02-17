@@ -1,0 +1,16 @@
+body {
+   background-image: url("silksong.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    }
+    canvas {
+      border: 2px solid black;
+      background: #111;
+      display: block;
+      margin: auto;
+    }

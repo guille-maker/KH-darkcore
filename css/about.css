@@ -1,0 +1,67 @@
+/* ====== HEADER BLANCO KH DARKCORE ====== */
+
+header {
+    margin: 0;
+    padding: 20px;
+    background: #ffffff; /* BLANCO REAL */
+    color: #000000; /* TEXTO NEGRO */
+    font-size: 16px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+
+/* NAVBAR */
+.navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.navbar li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ====== ENLACES ADAPTADOS A FONDO BLANCO ====== */
+.navbar a {
+    color: #0f3460; /* azul KH oscuro */
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 18px;
+
+    /* Sombras PS1 pero en AZUL, no blanco */
+    text-shadow:
+        2px 2px #88aaff,
+        -2px -2px #4a7fff;
+
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar a:hover {
+    color: #1a1a2e; /* azul más oscuro */
+    transform: scale(1.2);
+    text-shadow:
+        3px 3px #4a7fff,
+        -3px -3px #1a3a8a;
+}
+
+/* Subrayado animado */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4a7fff, #88aaff);
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}

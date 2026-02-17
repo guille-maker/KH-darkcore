@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+  <title>Registro - KH Darkcore</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      padding: 20px;
+    }
+    
+    .form-container {
+      background: rgba(34, 34, 34, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      border: 2px solid #444;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    
+    .login-link {
+      text-align: center;
+      margin-top: 20px;
+      color: #ccc;
+    }
+    
+    .login-link a {
+      color: #6c5ce7;
+      text-decoration: none;
+    }
+    
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+    
+    .messages {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header style="background: #222; color: #fff; padding: 10px;">
+    <nav style="border: none; box-shadow: none; text-align: center;">
+      <ul class="navbar">
+        <li><img src="css/sora1.png" alt="Sora" style="width: 80px;" 
+                onmouseover="cambiarImagen()" onmouseout="restaurarImagen()"></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="noticias.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li style="margin-left:10%;"><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="form-container">
+      <h2 style="text-align: center; color: #fff; margin-bottom: 30px;">🎮 Crear Cuenta</h2>
+      
+      <!-- Aquí se mostrarán los mensajes de PHP -->
+      <div class="messages" id="messages">
+        <?php
+        // Mostrar mensajes de error o éxito si existen
+        if (isset($_GET['error'])) {
+            echo '<div class="error">❌ ' . htmlspecialchars($_GET['error']) . '</div>';
+        }
+        if (isset($_GET['success'])) {
+            echo '<div class="success">✅ ' . htmlspecialchars($_GET['success']) . '</div>';
+        }
+        ?>
+      </div>
+
+      <form class="formulario" action="php/registrar.php" method="POST" id="registerForm">
+        <label>Nombre:
+          <input type="text" name="nombre" required placeholder="Tu nombre completo">
+        </label>
+        
+        <label>Email:
+          <input type="email" name="email" required placeholder="tu@email.com">
+        </label>
+        
+        <label>Teléfono:
+          <input type="tel" name="telefono" pattern="[0-9]{9}" title="9 dígitos" required placeholder="123456789">
+        </label>
+        
+        <label>Contraseña:
+          <input type="password" id="password" name="password" pattern=".{8,}" 
+                 title="Mínimo 8 caracteres" required placeholder="Mínimo 8 caracteres">
+        </label>
+
+        <label>Confirmar Contraseña:
+          <input type="password" name="confirm" id="confirm" pattern=".{8,}" 
+                 title="Mínimo 8 caracteres" required placeholder="Repite tu contraseña">
+        </label>
+        
+        <!-- Barra de fuerza de contraseña -->
+        <div style="margin: 15px 0;">
+          <label style="font-size: 12px; color: #ccc;">Seguridad de la contraseña:</label>
+          <div id="password-strength">
+            <div class="bar" id="bar1"></div>
+            <div class="bar" id="bar2"></div>
+            <div class="bar" id="bar3"></div>
+            <div class="bar" id="bar4"></div>
+          </div>
+          <div id="password-strength-text" style="font-size: 11px; color: #888; margin-top: 5px;"></div>
+        </div>
+
+        <button type="submit" style="width: 100%; padding: 15px; font-size: 16px;">
+          🚀 Crear Cuenta
+        </button>
+      </form>
+
+      <div class="login-link">
+        <p>¿Ya tienes cuenta? <a href="login.html">Inicia Sesión aquí</a></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <button id="modo">☀️ Modo claro</button>
+    <p>&copy; 2024 KH Darkcore. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Validación de contraseñas en tiempo real
+    document.getElementById('confirm').addEventListener('input', function() {
+      const password = document.getElementById('password').value;
+      const confirm = this.value;
+      
+      if (password !== confirm && confirm.length > 0) {
+        this.style.borderColor = '#f44336';
+      } else {
+        this.style.borderColor = '#4CAF50';
+      }
+    });
+
+    // Fuerza de la contraseña
+    document.getElementById('password').addEventListener('input', function() {
+      checkPasswordStrength(this.value);
+    });
+
+    function checkPasswordStrength(password) {
+      const bars = [
+        document.getElementById('bar1'),
+        document.getElementById('bar2'),
+        document.getElementById('bar3'),
+        document.getElementById('bar4')
+      ];
+      
+      const strengthText = document.getElementById('password-strength-text');
+      let strength = 0;
+      
+      // Reset bars
+      bars.forEach(bar => {
+        bar.style.backgroundColor = '#444';
+      });
+      
+      // Check length
+      if (password.length >= 8) strength++;
+      if (password.length >= 12) strength++;
+      
+      // Check complexity
+      if (/[A-Z]/.test(password)) strength++;
+      if (/[0-9]/.test(password)) strength++;
+      if (/[^A-Za-z0-9]/.test(password)) strength++;
+      
+      // Update bars
+      const colors = ['#f44336', '#ff9800', '#4CAF50', '#2E7D32'];
+      const texts = ['Muy débil', 'Débil', 'Buena', 'Muy fuerte'];
+      
+      for (let i = 0; i < strength && i < 4; i++) {
+        bars[i].style.backgroundColor = colors[Math.min(strength - 1, 3)];
+      }
+      
+      strengthText.textContent = strength > 0 ? texts[Math.min(strength - 1, 3)] : '';
+    }
+
+    // Función para cambiar imagen (de tu código original)
+    function cambiarImagen() {
+      const img = document.querySelector('.navbar img');
+      img.src = 'css/sora2.png'; // Asegúrate de tener esta imagen
+    }
+
+    function restaurarImagen() {
+      const img = document.querySelector('.navbar img');
+      img.src = 'css/sora1.png';
+    }
+
+    // Modo claro/oscuro
+    document.getElementById('modo').addEventListener('click', function() {
+      document.body.style.background = document.body.style.background === '#f0f0f0' ? '#0f0f0f' : '#f0f0f0';
+      document.body.style.color = document.body.style.color === '#000' ? '#fff' : '#000';
+      this.textContent = document.body.style.background === '#f0f0f0' ? '🌙 Modo oscuro' : '☀️ Modo claro';
+    });
+  </script>
+
+</body>
+</html>

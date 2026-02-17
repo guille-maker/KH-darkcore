@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cartel Motivacional</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #333;
+    }
+    canvas {
+      border: 3px solid #000;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+     img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+     }
+      .canvas-columna {
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      gap: 15px;
+    }
+  </style>
+</head>
+<body>
+    <img src="tabien.jpg" alt="Imagen izquierda" style="display:left">
+    <div class="canvas-columna">
+      <canvas id="cartel" width="600" height="400"></canvas>
+      <img src="mondongo.jpg" alt="Imagen debajo del canvas">
+    </div>
+  <script>
+    const canvas = document.getElementById("cartel");
+    const ctx = canvas.getContext("2d");
+
+    const gradient = ctx.createLinearGradient(0, 0, 600, 400);
+    gradient.addColorStop(0, "#ff7e5f");
+    gradient.addColorStop(1, "#feb47b");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+    ctx.font = "bold 40px Arial";
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.fillText("¡Cree en ti mismo!", canvas.width/2, 150);
+
+
+    ctx.font = "20px Verdana";
+    ctx.fillStyle = "#222";
+    ctx.fillText("El éxito es la suma de pequeños esfuerzos", canvas.width/2, 220);
+    ctx.fillText("repetidos día tras día.", canvas.width/2, 250);
+
+    ctx.fillStyle = "yellow";
+    ctx.beginPath();
+    ctx.arc(300, 320, 50, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = "#ff7e5f";
+    ctx.font = "bold 30px Arial";
+    ctx.fillText("★", 300, 330);
+    ctx.fillText("★", 275, 342);
+    ctx.fillText("★", 325, 342);
+    ctx.fillText("★", 275, 315);
+    ctx.fillText("★", 325, 315);
+    ctx.fillText("★", 300, 355);
+    ctx.fillText("★", 300, 305);
+
+image 
+  </script>
+  <img src="peace.jpg" alt="Imagen de paz" width="200" style="display:right; position:absolute; right:75px; bottom:250px;">
+</body>
+</html>
